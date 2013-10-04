@@ -159,6 +159,11 @@ div.latest_gallery div.latest_img {
     display: block;
     float: left;
     margin: 10px 10px 0 0;
+
+}
+div.latest_gallery div.latest_img a img{
+	width: 90px;
+	height: 80px;
 }
 
 /* Our best work */
