@@ -2,7 +2,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
     <meta name="author" content="Nikita Belousov" />
-      
+    <meta http-equiv="Content-Language" content="th"> 
+<!--     <meta http-equiv="content-Type" content="text/html; charset=window-874"> 
+    <meta http-equiv="content-Type" content="text/html; charset=tis-620">  -->
+
       <!--[if Internet Explorer]>
       <link href="css/IE_input_bug.css" rel="stylesheet" type="text/css" />
       <![endif]-->
@@ -54,31 +57,22 @@
   </head>
 	<link rel="shortcut icon" href="/favicon2.png" type="image/png">
   <body>
-<!--     <div class="header">
-      <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-      <a class="extra" href="/">home</a>
-    </div> -->
+
+<!-- Start facebook script -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- End facebook script -->
+
+
 
         {{ content }}
 
-<!--         <div class="footer">
-          <div class="contact">
-            <p>
-              Your Name<br />
-              What You Are<br />
-              you@example.com
-            </p>
-          </div>
-          <div class="contact">
-            <p>
-              <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-              <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-            </p>
-          </div>
-        </div> -->
-
-        
-      </div>
 
   </body>
 </html>
