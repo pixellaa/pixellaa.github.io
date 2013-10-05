@@ -1,46 +1,84 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="Nikita Belousov" />
+      
+      <!--[if Internet Explorer]>
+      <link href="css/IE_input_bug.css" rel="stylesheet" type="text/css" />
+      <![endif]-->
+      
+      <link href="css/reset.css" rel="stylesheet" type="text/css" />
+      <link href="css/style.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+      
+      <title>{{ page.title }}</title>
+      
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+      <script type="text/javascript" src="js/input_clear.js"></script>
+      
+      <!-- Lightbox -->
+      <script type="text/javascript">
+      $(function() {
+          $('.latest_gallery a').lightBox();
+      });
+      </script>
+      
+      <!-- Loading -->
+      <script type="text/javascript">
+      $(function() { 
+      $('.main_content, .main_navi').hide(); 
+      $(window).load( function() {  
+      $('#loader').fadeOut();
+      $('.main_content, .main_navi').fadeIn(2000); 
+      } );
+      } );
+                          
+      $(document).ready(function() {
+      $("body").css("display", "none");
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+      $("body").fadeIn(2000);
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
-		
-    </head>
-	<link rel="shortcut icon" href="/favicon.png" type="image/png">
-	<!-- <link rel="shortcut icon" type="image/png" href="http://www.example.com/favicon.png" /> -->
-    <body>
+    $("a.transition").click(function(event){
+      event.preventDefault();
+      linkLocation = this.href;
+      $("body").fadeOut(1000, redirectPage);
+    });
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
+    function redirectPage() {
+      window.location = linkLocation;
+    }
+      });
+      </script>
+      
+  </head>
+	<link rel="shortcut icon" href="/favicon2.png" type="image/png">
+  <body>
+<!--     <div class="header">
+      <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+      <a class="extra" href="/">home</a>
+    </div> -->
+
+        {{ content }}
+
+<!--         <div class="footer">
+          <div class="contact">
+            <p>
+              Your Name<br />
+              What You Are<br />
+              you@example.com
+            </p>
           </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
+          <div class="contact">
+            <p>
+              <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+              <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+            </p>
           </div>
-        </div>
+        </div> -->
 
-    </body>
+        
+      </div>
+
+  </body>
 </html>
